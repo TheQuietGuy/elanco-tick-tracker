@@ -2,9 +2,9 @@
 
 **Submitted by: Sarhan Alam Khan** — Elanco Placement Programme, Full Stack technical task.
 
-A full-stack MVP that turns crowdsourced tick sighting data into a map, trend insights, an educational guide and a community reporting form. It opens with a short, skippable "system initialisation" intro built from the supplied intro feature spec.
+A full-stack MVP that turns crowdsourced tick-sighting data into a map, trend insights, an educational guide, and a community reporting form. It opens with a short, skippable "system initialisation" intro built from the supplied intro feature spec.
 
-> **Video walkthrough:** `VIDEO_LINK_HERE` (≤10 min, see [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md))
+**Video walkthrough:** https://youtu.be/J9QVePM19OM
 
 ## Run it
 
