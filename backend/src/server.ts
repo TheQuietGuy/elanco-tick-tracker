@@ -1,0 +1,15 @@
+import { mkdirSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createApp } from './app.js';
+import { openDb } from './db.js';
+import { runIngest } from './ingest.js';
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const dbPath = process.env.DB_PATH ?? resolve(root, 'data/ticks.db');
+mkdirSync(dirname(dbPath), { recursive: true });
+const db = openDb(dbPath);
+const report = await runIngest(db, { snapshotPath: resolve(root, 'data/sightings.snapshot.json'), liveUrl: process.env.ELANCO_API_URL ?? 'https://dev-task.elancoapps.com/', livePath: process.env.ELANCO_API_PATH ?? '/' });
+console.log('[ingest]', JSON.stringify(report));
+const app = createApp(db, { uploadDir: resolve(root, 'uploads') });
+const port = Number(process.env.PORT ?? 4000);
+app.listen(port, () => console.log(`Tick tracker API listening on http://localhost:${port}`));

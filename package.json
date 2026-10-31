@@ -1,0 +1,18 @@
+{
+  "name": "elanco-uk-tick-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elanco ITSP technical task: full-stack UK tick sighting tracker",
+  "scripts": {
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "dev": "concurrently -n api,web -c blue,green \"npm --prefix backend run start\" \"npm --prefix frontend run dev\"",
+    "test": "npm --prefix backend test",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.63.0",
+    "concurrently": "^9.0.0"
+  }
+}

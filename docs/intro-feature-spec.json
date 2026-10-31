@@ -1,0 +1,116 @@
+{
+  "feature": "Cinematic system initialisation intro",
+  "product": "Elanco UK Tick Surveillance Platform",
+  "goal": "Create a memorable, premium first-visit experience inspired by scientific monitoring systems and cinematic game boot screens, while keeping the product professional, accessible and fast.",
+  "design": {
+    "tone": [
+      "premium",
+      "cinematic",
+      "scientific",
+      "professional",
+      "restrained"
+    ],
+    "avoid": [
+      "arcade aesthetic",
+      "gaming UI",
+      "excessive glow",
+      "long animations",
+      "visual clutter"
+    ],
+    "intro_background": "dark navy",
+    "branding": "Use Elanco branding/logo; do not invent a separate product brand or logo.",
+    "visuals": [
+      "Elanco logo reveal",
+      "subtle blue scanning line",
+      "subtle particles or data points",
+      "stylised outline of the United Kingdom gradually appearing",
+      "blue sighting points illuminating on the map",
+      "subtle connecting lines and restrained HUD-style details"
+    ],
+    "main_dashboard": "Transition into the existing clean, light Elanco-branded dashboard."
+  },
+  "sequence": [
+    {
+      "step": 1,
+      "name": "Initialisation",
+      "visual": "Dark navy screen; subtle power-on visual; Elanco logo appears.",
+      "text": "INITIALISING SURVEILLANCE SYSTEM"
+    },
+    {
+      "step": 2,
+      "name": "Data connection",
+      "visual": "Scanning line and restrained data particles.",
+      "text": "CONNECTING TO DATA SOURCES"
+    },
+    {
+      "step": 3,
+      "name": "Map visualisation",
+      "visual": "UK outline materialises; map points illuminate.",
+      "text": "PREPARING UK ACTIVITY MAP"
+    },
+    {
+      "step": 4,
+      "name": "Data preparation",
+      "visual": "Map completes its reveal; subtle synchronisation animation.",
+      "text": "PREPARING SIGHTING DATABASE"
+    },
+    {
+      "step": 5,
+      "name": "Ready",
+      "visual": "Brief confirmation; map expands/transitions into dashboard.",
+      "text": "SURVEILLANCE SYSTEM READY"
+    }
+  ],
+  "timing": {
+    "target_duration_seconds": "5-7 maximum",
+    "skip": "Always provide an immediately available Skip button.",
+    "returning_visit": "Show a shortened transition or skip the full intro.",
+    "loading": "Do not fake progress or claim API success. If real loading is required, reflect actual application readiness."
+  },
+  "audio": {
+    "default": "muted",
+    "autoplay": "Never play audio without explicit user interaction.",
+    "controls": "Provide a visible sound toggle.",
+    "style": [
+      "soft electronic power-on",
+      "subtle logo chime",
+      "gentle scanning sound",
+      "quiet interface beeps",
+      "short confirmation tone"
+    ],
+    "failure": "Audio failure must not block or affect the intro or dashboard."
+  },
+  "accessibility_and_performance": {
+    "reduced_motion": "Respect prefers-reduced-motion and provide a simplified/static transition.",
+    "mobile": "Use a shorter, lightweight version on mobile.",
+    "keyboard": "Skip and sound controls must be keyboard accessible and visibly focusable.",
+    "performance": "Avoid large assets and expensive effects; lazy-load optional audio/assets where appropriate.",
+    "failure": "If intro assets or animations fail, render the dashboard normally."
+  },
+  "implementation": {
+    "frontend": "React + TypeScript",
+    "animation": "Framer Motion",
+    "graphics": "CSS and SVG",
+    "audio": "Howler.js or lightweight Web Audio implementation",
+    "architecture": "Keep the intro isolated in a reusable component; do not modify backend functionality.",
+    "state": "Use session-based display logic so the full intro is not repeatedly shown during the same browsing session."
+  },
+  "acceptance_criteria": [
+    "The intro looks like a professional scientific monitoring system, not an arcade game.",
+    "The full sequence takes no more than 7 seconds under normal conditions.",
+    "The user can skip immediately.",
+    "Audio is muted until the user enables it.",
+    "The intro does not claim that external data has synchronised unless the backend confirms it.",
+    "The dashboard remains usable if animation or audio fails.",
+    "Reduced-motion preferences are respected.",
+    "The experience works on desktop and mobile.",
+    "No backend changes are made."
+  ],
+  "agent_instructions": [
+    "Inspect the existing project structure and design before implementing.",
+    "Reuse existing dependencies and components where practical; do not install packages unnecessarily.",
+    "Do not replace or redesign the main dashboard.",
+    "Do not invent Elanco brand guidelines; use the project's established palette and assets.",
+    "Implement the feature, run available checks, and report changed files and any setup steps."
+  ]
+}
